@@ -105,7 +105,7 @@ app.get('/health', (req, res) => {
         services: {
             products: process.env.PRODUCTS_SERVICE_URL,
             newsletter: process.env.NEWSLETTER_SERVICE_URL,
-            search: process.env.SEARCH_SERVICE_URL
+            search: process.env.SEARCH_SERVICE_URL,
         }
     });
 });
@@ -116,12 +116,12 @@ app.get('/debug', (req, res) => {
         services: {
             products: process.env.PRODUCTS_SERVICE_URL,
             newsletter: process.env.NEWSLETTER_SERVICE_URL,
-            search: process.env.SEARCH_SERVICE_URL
+            search: process.env.SEARCH_SERVICE_URL,
         },
         routes: {
             products: `${process.env.PRODUCTS_SERVICE_URL}/api/products`,
             newsletter: `${process.env.NEWSLETTER_SERVICE_URL}/api/newsletter`,
-            search: `${process.env.SEARCH_SERVICE_URL}/api/search`
+            search: `${process.env.SEARCH_SERVICE_URL}/api/search`,
         },
         environment: {
             PORT: process.env.PORT,
@@ -166,7 +166,7 @@ app.use('*', (req, res) => {
             debug: 'GET /debug',
             products: 'GET /api/products',
             newsletter: 'POST /api/newsletter/subscribe',
-            searchSuggestions: 'GET /api/search/suggestions?q=query'
+            searchSuggestions: 'GET /api/search/suggestions?q=query',
         }
     });
 });
